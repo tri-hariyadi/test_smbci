@@ -1,4 +1,4 @@
-# Todo App Client
+# School Library Client
 
 ### Technology Used:
 
@@ -40,7 +40,7 @@
 yarn install
 ```
 
-#### 3, Make sure your API BaseURL is correct on `todo-app-client/src/lib/api/api.ts` adjust to your API server url
+#### 3, Make sure your API BaseURL is correct on `school-library-client/src/lib/api/api.ts` adjust to your API server url
 
 #### 4. Run the application in dev mode
 
@@ -49,9 +49,6 @@ yarn dev
 ```
 
 #### 5. open web app on http://localhost:5173/
-
-If you use `docker` and `docker-compose`, you can run a single package project and its server application with a single
-command without the hassle of running the client and server applications individually. Follow the guide here: [Run Application Using docker-compose](https://github.com/tri-hariyadi/test_upscale/blob/master/README.md)
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
