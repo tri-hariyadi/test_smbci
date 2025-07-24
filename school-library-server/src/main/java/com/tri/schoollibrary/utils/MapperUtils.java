@@ -8,7 +8,7 @@ import java.util.Map;
 public class MapperUtils {
     private static final ObjectMapper mapper = new ObjectMapper();
 
-    // maping value
+    // maping
     public static Map<String, Object> convertToMap(Object obj) {
         return mapper.convertValue(obj, new TypeReference<Map<String, Object>>() {});
     }
