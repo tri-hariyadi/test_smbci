@@ -31,7 +31,7 @@
 * Tool: Vite
 * UI: Tailwind css
 * Http request: Axios
-* [README](https://github.com/tri-hariyadi/test_upscale/blob/master/todo-app-client/README.md)
+* [README](https://github.com/tri-hariyadi/test_smbci/blob/master/school-library-client/README.md)
 
 #### Backend:
 
