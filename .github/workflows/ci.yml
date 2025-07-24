@@ -3,7 +3,7 @@ name: CI
 on:
   push:
     paths:
-      - 'todo-app-client/**'
+      - 'school-library-client/**'
     branches:
       - master
 
@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: todo-app-client
+        working-directory: school-library-client
 
     steps:
       - uses: actions/checkout@v2
