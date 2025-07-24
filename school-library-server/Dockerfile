@@ -22,15 +22,28 @@
 ## Jalankan aplikasi
 #ENTRYPOINT ["java", "-jar", "app.jar"]
 
+#FROM openjdk:17-jdk-slim AS build
+#WORKDIR /app
+#COPY school-library-server/pom.xml .
+#RUN mvn dependency:go-offline
+#COPY school-library-server/ .
+#RUN mvn clean install
+#
+#FROM openjdk:17-jdk-slim
+#WORKDIR /app
+#COPY --from=build /app/target/school-library-server.jar /app/school-library-server.jar
+#ENTRYPOINT ["java", "-jar", "/app/school-library-server.jar"]
+#EXPOSE 8080
+
 FROM openjdk:17-jdk-slim AS build
 WORKDIR /app
-COPY school-library-server/pom.xml .
-RUN mvn dependency:go-offline
-COPY school-library-server/ .
-RUN mvn clean install
+COPY pom.xml .
+RUN mvn dependency:go-offline -B
+COPY src ./src
+RUN ls -lah
+RUN mvn package -DskipTests
 
 FROM openjdk:17-jdk-slim
 WORKDIR /app
 COPY --from=build /app/target/school-library-server.jar /app/school-library-server.jar
 ENTRYPOINT ["java", "-jar", "/app/school-library-server.jar"]
-EXPOSE 8080
