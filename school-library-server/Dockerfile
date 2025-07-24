@@ -60,4 +60,4 @@ FROM openjdk:17-jdk-slim
 WORKDIR /app
 RUN ls -lah
 COPY --from=build /app/target/schoollibrary-0.0.1-SNAPSHOT.jar /app/schoollibrary-0.0.1-SNAPSHOT.jar
-ENTRYPOINT ["java", "-jar", "/app/school-library-server.jar"]
+ENTRYPOINT ["java", "-jar", "/app/schoollibrary-0.0.1-SNAPSHOT.jar"]
