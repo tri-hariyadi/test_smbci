@@ -48,7 +48,7 @@
 #COPY --from=build /app/target/school-library-server.jar /app/school-library-server.jar
 #ENTRYPOINT ["java", "-jar", "/app/school-library-server.jar"]
 
-FROM maven:3.9.6-eclipse-temurin-17 AS build
+FROM maven:3.8.3-openjdk-17 AS build
 WORKDIR /app
 COPY school-library-server/pom.xml .
 RUN mvn dependency:go-offline -B
