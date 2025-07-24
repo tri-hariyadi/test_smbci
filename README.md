@@ -1,6 +1,6 @@
 # School Library Management
 
-### available for online on  
+### Available for online on https://school-library-dusky.vercel.app/ 
 
 ## The following features:
 
@@ -42,7 +42,7 @@
 
 #### Extra
 
-* Deployed to the platform publik frontend is deployed to vercel end backend is deployed to railway
+* Deployed to the platform publik frontend is deployed to vercel end backend is deployed to railway (https://school-library-dusky.vercel.app/)
 * Using CI/CD Github Action to auto deploy
 
 

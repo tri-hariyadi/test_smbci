@@ -12,7 +12,7 @@ import java.util.Map;
 
 public class JwtUtil {
     private static final String SECRET = "my-very-secret-key-which-should-be-long-enough";
-    private static final long EXPIRATION_TIME = 1000 * 60 * 60;
+    private static final long EXPIRATION_TIME = 1000 * 60 * 60 * 7;
     private static final Key key = Keys.hmacShaKeyFor(SECRET.getBytes());
 
     public String generateToken(Map<String, Object> claims) {
