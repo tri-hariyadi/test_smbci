@@ -1,6 +1,6 @@
 import { Suspense } from 'react';
 
-import { Profile } from 'components';
+import { Header, Profile } from 'components';
 import type { IApi } from 'lib/api/types';
 
 import Layout, { LayoutLeft, LayoutRight } from './layout.tsx';
@@ -37,6 +37,7 @@ const Dashboard = () => {
 
   return (
     <>
+      <Header page={page} setPage={setPage} />
       <Layout>
         <LayoutLeft className="shadow-lg px-4 py-6 rounded-xl border-1 border-neutral-200">
           <Profile page={page} setPage={setPage} />

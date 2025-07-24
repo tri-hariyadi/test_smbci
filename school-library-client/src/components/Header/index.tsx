@@ -2,8 +2,9 @@ import DummyProfile from 'assets/dummy_profile.png';
 
 import Dropdown, { DropdownMenuContent, DropdownMenuTrigger } from '../Dropdown';
 import Profile from '../Profile';
+import type { ProfileProps } from '../Profile/types';
 
-const Header = () => {
+const Header = ({ page, setPage }: ProfileProps) => {
   return (
     <div className="h-16 w-full bg-white py-3 flex justify-center shadow-md fixed top-0 z-50">
       <div className="px-4 2xl:px-52 w-full flex justify-between items-center">
@@ -17,7 +18,7 @@ const Header = () => {
                 </button>
               </DropdownMenuTrigger>
               <DropdownMenuContent className="px-4 py-6">
-                <Profile />
+                <Profile page={page} setPage={setPage} />
               </DropdownMenuContent>
             </Dropdown>
           </div>

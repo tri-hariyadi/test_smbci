@@ -4,8 +4,8 @@ import { toast } from 'react-toastify';
 import type { IApi, IApiRequestParams } from 'lib/api/types';
 
 class Api {
-  // private BASE_URL = 'https://authentic-fulfillment-production.up.railway.app/api/v1';
-  private BASE_URL = 'http://localhost:8080/api/v1';
+  private BASE_URL = 'https://school-management-production-5535.up.railway.app/api/v1';
+  // private BASE_URL = 'http://localhost:8080/api/v1';
   private instance = Axios.create({
     timeout: 60000,
     baseURL: this.BASE_URL,

@@ -2,7 +2,7 @@ import { type PropsWithChildren } from 'react';
 
 import { Navigate } from 'react-router';
 
-import { Header, Loading } from 'components';
+import { Loading } from 'components';
 import useSession from 'lib/hooks/useSession';
 
 const PrivateRoute = ({ children }: PropsWithChildren) => {
@@ -16,12 +16,7 @@ const PrivateRoute = ({ children }: PropsWithChildren) => {
     return <Navigate to="/sign-in" replace />;
   }
 
-  return (
-    <>
-      <Header />
-      {children}
-    </>
-  );
+  return <>{children}</>;
 };
 
 export default PrivateRoute;
