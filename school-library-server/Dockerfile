@@ -57,5 +57,6 @@ RUN mvn package -DskipTests
 
 FROM openjdk:17-jdk-slim
 WORKDIR /app
+RUN ls -lah /app/target
 COPY --from=build /app/target/school-library-server.jar /app/school-library-server.jar
 ENTRYPOINT ["java", "-jar", "/app/school-library-server.jar"]
