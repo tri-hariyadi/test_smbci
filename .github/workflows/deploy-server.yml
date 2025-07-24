@@ -17,6 +17,7 @@ jobs:
 
     steps:
       - name: Checkout code
+        working-directory: ./school-library-server
         uses: actions/checkout@v3
 
       - name: Debug folder
