@@ -1,0 +1,43 @@
+name: Deploy Client to Vercel
+
+env:
+  VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+  VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+
+on:
+  workflow_run:
+    workflows: ["CI"]
+    types:
+      - completed
+    branches:
+      - master
+
+jobs:
+  build-and-deploy:
+    if: >
+      github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Install Vercel CLI
+        run: yarn global add vercel@latest
+
+      - name: Pull Vercel Environment Information
+        working-directory: ./todo-app-client
+        run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
+
+      - name: Debug folder
+        working-directory: ./todo-app-client
+        run: ls -lah
+
+      - name: Build Project Artifacts
+        working-directory: ./todo-app-client
+        run: vercel build --prod --token=${{ secrets.VERCEL_TOKEN }}
+
+      - name: Deploy Project Artifacts to Vercel
+        working-directory: ./todo-app-client
+        run: vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }}

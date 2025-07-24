@@ -1,0 +1,95 @@
+@import "tailwindcss";
+
+@theme {
+    --font-inter-bold: Inter-Bold;
+    --font-inter-italic: Inter-Italic;
+    --font-inter-medium: Inter-Medium;
+    --font-inter-regular: Inter-Regular;
+    --font-inter-semibold: Inter-SemiBold;
+    --font-inter-extra-bold: Inter-ExtraBold;
+    --font-inter-bold-italic: Inter-BoldItalic;
+    --animate-modal-close: modal-out 0.3s both;
+    --animate-modal-open: modal-in 0.3s 0.1s both;
+}
+
+@font-face {
+    font-family: 'Inter-Bold';
+    src: url("./assets/fonts/Inter_18pt-Bold.ttf") format("truetype");
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Inter-Italic';
+    src: url("./assets/fonts/Inter_18pt-Italic.ttf") format("truetype");
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Inter-Medium';
+    src: url("./assets/fonts/Inter_18pt-Medium.ttf") format("truetype");
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Inter-Regular';
+    src: url("./assets/fonts/Inter_18pt-Regular.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Inter-SemiBold';
+    src: url("./assets/fonts/Inter_18pt-SemiBold.ttf") format("truetype");
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Inter-ExtraBold';
+    src: url("./assets/fonts/Inter_18pt-ExtraBold.ttf") format("truetype");
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Inter-BoldItalic';
+    src: url("./assets/fonts/Inter_18pt-BoldItalic.ttf") format("truetype");
+    font-weight: 600;
+    font-style: normal;
+}
+
+@keyframes modal-in {
+    0% {
+        opacity: 0;
+        visibility: hidden;
+        transform: scale(0.5);
+    }
+    100% {
+        opacity: 1;
+        visibility: visible;
+        transform: scale(1);
+    }
+}
+
+@keyframes modal-out {
+    0% {
+        opacity: 1;
+        visibility: visible;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0;
+        visibility: hidden;
+        transform: scale(0.5);
+    }
+}
+
+@layer utilities {
+    input:-webkit-autofill {
+        box-shadow: 0 0 0 1000px #F6F5F5 inset !important;
+        -webkit-text-fill-color: #000 !important;
+    }
+}

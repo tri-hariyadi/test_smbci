@@ -1,0 +1,20 @@
+# Development Dockerfile untuk React (Vite)
+FROM node:22.17.0-alpine
+
+# Set working directory
+WORKDIR /app
+
+# Install dependencies
+COPY package.json yarn.lock ./
+COPY .eslintrules ./.eslintrules
+
+RUN yarn install
+
+# Copy all source code
+COPY . .
+
+# Expose Vite dev port
+EXPOSE 5173
+
+# Jalankan Vite dev server
+CMD ["yarn", "dev"]
